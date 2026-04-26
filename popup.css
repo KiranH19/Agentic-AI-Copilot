@@ -1,0 +1,297 @@
+.extension-popup,
+#multi-agent-cybersecurity-copilot-card {
+  color-scheme: dark;
+  --copilot-bg: rgba(7, 12, 24, 0.88);
+  --copilot-panel: rgba(16, 24, 42, 0.82);
+  --copilot-line: rgba(255, 255, 255, 0.16);
+  --copilot-text: #f8fbff;
+  --copilot-muted: #aeb8c7;
+  --copilot-blue: #67e8f9;
+  --copilot-green: #38d996;
+  --copilot-amber: #fbbf24;
+  --copilot-red: #fb7185;
+}
+
+.extension-popup {
+  width: 340px;
+  margin: 0;
+  background: #080d18;
+  color: var(--copilot-text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.copilot-extension-panel {
+  padding: 18px;
+}
+
+.copilot-extension-panel h1 {
+  margin: 0 0 10px;
+  font-size: 21px;
+  line-height: 1.12;
+  letter-spacing: 0;
+}
+
+.copilot-extension-panel p {
+  margin: 0 0 12px;
+  color: var(--copilot-muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.copilot-extension-panel strong {
+  color: var(--copilot-text);
+}
+
+.copilot-kicker,
+.copilot-note {
+  color: var(--copilot-blue);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+#multi-agent-cybersecurity-copilot-card {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 2147483647;
+  width: min(390px, calc(100vw - 28px));
+  max-height: min(720px, calc(100vh - 32px));
+  overflow: hidden;
+  border: 1px solid var(--copilot-line);
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, rgba(103, 232, 249, 0.13), transparent 34%),
+    linear-gradient(180deg, rgba(22, 30, 51, 0.94), rgba(7, 12, 24, 0.92));
+  color: var(--copilot-text);
+  box-shadow: 0 24px 90px rgba(0, 0, 0, 0.38);
+  backdrop-filter: blur(18px);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  animation: copilot-slide-in 220ms ease-out both;
+}
+
+#multi-agent-cybersecurity-copilot-card * {
+  box-sizing: border-box;
+}
+
+.copilot-card-scroll {
+  max-height: min(720px, calc(100vh - 32px));
+  overflow: auto;
+  padding: 16px;
+}
+
+.copilot-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.copilot-title {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.15;
+  letter-spacing: 0;
+}
+
+.copilot-subtitle {
+  margin: 5px 0 0;
+  color: var(--copilot-muted);
+  font-size: 12px;
+}
+
+.copilot-close {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  border: 1px solid var(--copilot-line);
+  border-radius: 10px;
+  color: var(--copilot-text);
+  background: rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.copilot-block {
+  border: 1px solid var(--copilot-line);
+  border-radius: 14px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.copilot-block + .copilot-block {
+  margin-top: 10px;
+}
+
+.copilot-label {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--copilot-blue);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.copilot-input {
+  max-height: 82px;
+  overflow: auto;
+  color: var(--copilot-text);
+  overflow-wrap: anywhere;
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+.copilot-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.copilot-metric {
+  min-width: 0;
+  border: 1px solid var(--copilot-line);
+  border-radius: 12px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.17);
+}
+
+.copilot-metric span {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--copilot-muted);
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.copilot-metric strong {
+  display: block;
+  overflow-wrap: anywhere;
+  font-size: 15px;
+  line-height: 1.15;
+}
+
+.copilot-low {
+  color: var(--copilot-green);
+}
+
+.copilot-medium {
+  color: var(--copilot-amber);
+}
+
+.copilot-high {
+  color: var(--copilot-red);
+}
+
+.copilot-reasons {
+  display: grid;
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.copilot-reasons li {
+  position: relative;
+  padding-left: 17px;
+  color: var(--copilot-muted);
+  font-size: 12px;
+  line-height: 1.38;
+}
+
+.copilot-reasons li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--copilot-blue);
+}
+
+.copilot-trace {
+  display: grid;
+  gap: 8px;
+}
+
+.copilot-agent {
+  border: 1px solid var(--copilot-line);
+  border-radius: 12px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.14);
+  animation: copilot-fade-up 220ms ease both;
+}
+
+.copilot-agent b {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 12px;
+}
+
+.copilot-agent p {
+  margin: 0;
+  color: var(--copilot-muted);
+  font-size: 11px;
+  line-height: 1.38;
+}
+
+.copilot-footer {
+  margin: 10px 2px 0;
+  color: rgba(248, 251, 255, 0.62);
+  font-size: 10px;
+  line-height: 1.35;
+}
+
+.copilot-card-exit {
+  animation: copilot-slide-out 160ms ease-in both;
+}
+
+@media (max-width: 460px) {
+  #multi-agent-cybersecurity-copilot-card {
+    right: 14px;
+    bottom: 14px;
+  }
+
+  .copilot-metrics {
+    grid-template-columns: 1fr;
+  }
+}
+
+@keyframes copilot-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes copilot-slide-out {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+}
+
+@keyframes copilot-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

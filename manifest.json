@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Multi-Agent Cybersecurity Copilot",
+  "version": "1.0.0",
+  "description": "Local hackathon prototype that simulates a multi-agent cybersecurity review for selected text and links.",
+  "permissions": ["contextMenus", "scripting", "activeTab"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Multi-Agent Cybersecurity Copilot",
+    "default_popup": "popup.html"
+  }
+}
