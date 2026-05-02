@@ -1,41 +1,44 @@
-Multi-Agent Cybersecurity Copilot
+# Multi-Agent Cybersecurity Copilot (Chrome Extension)
 
-A Chrome Extension that simulates a multi-agent cybersecurity system to analyze links or text in real-time using a fully local pipeline.
-Right-click any content → verify → get instant risk analysis inside the webpage.
-Features
-Context menu integration (right-click verification)
-Local rule-based threat detection (no APIs)
-Risk classification: Low / Medium / High
-Confidence score (0–100%)
-Action output: ALLOW / WARN / BLOCK
-3–5 clear reasons for decision
-Transparent agent trace
-Floating bottom-right popup UI
-How It Works
-The system follows a multi-agent pipeline:
-Input → Pattern Analysis → Reasoning → Decision → Response
-Each stage is implemented as a modular JavaScript function, passing structured data forward.
-Detection Logic
-Suspicious file types (.exe, .apk, .zip, etc.)
-Phishing keywords (urgent, verify now, free gift, etc.)
-Suspicious domains (.xyz, .ru, .tk)
-Brand spoofing (SBI, HDFC, PayPal, Google, etc.)
-URL heuristics (length, hyphens, numbers)
-Shortened links (bit.ly, tinyurl, t.co)
-Each match adds risk score → determines final classification.
-Tech Stack
-HTML
-CSS
-JavaScript
-Chrome Extension APIs (Manifest V3)
-Concept
-Inspired by agent-based architectures like LangChain, but implemented fully locally without external models or services.
-Limitations
-Rule-based detection (no real AI)
-Limited to predefined patterns
-Not a production security tool
-Use Case
-Hackathon demo
-Cybersecurity awareness
-Agent-based system prototype
+A lightweight Chrome Extension that simulates a multi-agent cybersecurity system to verify links or text in real-time using a local rule-based pipeline.
 
+## Features
+- Right-click verification (context menu)
+- Local threat detection (no APIs or backend)
+- Risk classification (Low / Medium / High)
+- Confidence score (0–100%)
+- Action output (ALLOW / WARN / BLOCK)
+- Clear reasoning (3–5 points)
+- Agent trace system
+- Floating popup UI (bottom-right)
+
+## Technologies Used
+- HTML
+- CSS
+- JavaScript
+- Chrome Extension APIs (Manifest V3)
+
+## How It Works
+- User selects text or link
+- Right-click → Verify
+- Data sent from background.js → content.js
+- Multi-agent pipeline runs:
+  Input → Pattern Analysis → Reasoning → Decision → Response
+- Popup displays result instantly
+
+## Detection Logic
+- Suspicious file types (.exe, .apk, .zip, etc.)
+- Phishing keywords (urgent, verify now, free gift, etc.)
+- Suspicious domains (.xyz, .ru, .tk)
+- Brand spoofing (SBI, HDFC, PayPal, etc.)
+- URL patterns (length, hyphens, numbers)
+- Shortened links (bit.ly, tinyurl)
+
+## How to Run
+1. Open Chrome → chrome://extensions/
+2. Enable Developer Mode
+3. Click "Load unpacked"
+4. Select project folder
+
+## Note
+This is a simulated cybersecurity prototype for demonstration purposes. Not a real security tool.
